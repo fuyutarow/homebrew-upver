@@ -7,9 +7,7 @@ class Upver < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "build", "--release"
-
-    bin.install "target/release/upver"
+    system "make", "install", "PREFIX=#{prefix}"
   end
 end
 
